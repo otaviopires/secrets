@@ -1,12 +1,52 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <link type="text/css" rel="stylesheet" href="style.css" />
   <title>Search Secrets Life</title>
+
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segoe-ui-symbol" type="text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(function($) {
+      $('#search-trigger').click(function(){
+        $('#search-input').toggleClass('search-input-open');
+      });
+
+      $(document).click(function(e){
+        if(!$(e.target).closest('.ngen-search-form').length){
+          $('#search-input').removeClass('search-input-open');
+        }
+      });
+    });
+  </script>
+
+
+
 </head>
 
 <body>
+
+  <div class="nav_bar">
+    <a href="#">Home</a> |
+    <a href="#">About</a> |
+    <a href="#">News</a> |
+    <a href="#">Feedback</a> |
+    <a href="#">Contact</a> 
+  </div>
+
+
+  <div>
+    <div class="form">
+      <form class="form-search ngen-search-form" action="" method="get">
+        <input type="text" name="q" id="search-input" class="form-search-input" placeholder="search on Secrets" dir="ltr">
+        <span id="search-trigger" class="form-search-submit"> &#x1F50E;</span>
+      </form>
+    </div>
+  </div>
+
+
   <div class="wrapper">
     <h1>Advanced serch</h1>
     <div class="searchbox">
